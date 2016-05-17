@@ -54,23 +54,25 @@
                 <li><a href="#">N1</a></li>
                 <li><a href="#">N2</a></li>
                 <li role="separator" class="divider"></li>
+                <li><a href="#">Admin Outils</a></li>
                 <li><a href="#">Proximité</a></li>
-                <li><a href="#">Maintenance Matériel</a></li>
+                <li><a href="#">Proximité - Solutions 30</a></li>
               </ul>
             </li>
             <!-- Demandes -->
             <li class="dropdown">
-              <a href="#metiers">Demandes <span class="caret hidden-xs"></span></a>
+              <a href="#demandes">Demandes <span class="caret hidden-xs"></span></a>
               <ul class="dropdown-menu hidden-xs">
                 <li><a href="#">Vue générale</a></li>
                 <li role="separator" class="divider"></li>
+                <li><a href="#">Admin Outils</a></li>
                 <li><a href="#">Proximité</a></li>
+                <li><a href="#">Proximité - Solutions 30</a></li>
               </ul>
             </li>
             <li><a href="#problemes">Problèmes</a></li>
-            <li><a href="#changements">Changements</a></li>
-            <li><a href="#connaissances">Connaissances</a></li>
-            <li><a href="#securite">Sécurité</a></li>
+            <li><a href="#knowledge">Knowledge</a></li>
+            <li><a href="#vip">VIP</a></li>
             <!-- Métiers -->
             <li class="dropdown">
               <a href="metiers.html">Métiers <span class="caret hidden-xs"></span></a>
@@ -83,6 +85,7 @@
                 <li><a href="#">Fonction Centrale</a></li>
               </ul>
             </li>
+            <li><a href="#toolboard">Toolboard</a></li>
           </ul>
         </div><!--/.nav-collapse -->
 
@@ -97,22 +100,10 @@
       <p>Bienvenue sur le nouveau FlashBoard. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <h2>Block 1</h2>
-          <img class="center-block" src="../assets/img/250x100.png">
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <h2>Block 2</h2>
-          <img class="center-block" src="../assets/img/250x100.png">
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <h2>Block 3</h2>
-          <img class="center-block" src="../assets/img/250x100.png">
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <h2>Block 4</h2>
-          <img class="center-block" src="../assets/img/250x100.png">
-        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer"></div>
+        <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer2"></div>
+        <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer3"></div>
+        <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer4"></div>
       </div>
     </div>
 
@@ -127,6 +118,10 @@
     <script src="../lib/jquery/jquery-1.12.3.min.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
+
+    <!-- JavaScript FusionCharts -->
+    <script type="text/javascript" src="../lib/fusioncharts/js/fusioncharts.js"></script>
+    <script type="text/javascript" src="../lib/fusioncharts/js/themes/fusioncharts.theme.fint.js"></script>
 
   </body>
 </html>
