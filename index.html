@@ -7,18 +7,13 @@
     <title>FlashBoard BP²I</title>
 
     <!-- Importation CSS Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
 
     <!-- Importation CSS Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <!-- Style CSS Perso -->
-    <link href="index.css" rel="stylesheet">
-
-    <!-- JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="../assets/css/design.css">
   </head>
 
   <body>
@@ -26,7 +21,7 @@
     <!-- ======================================================== -->
     <header class="container">
       <div class="row">
-        <img class="col-md-4 hidden-xs" src="img/logo_bp2i0.gif" alt="logo-top"/>
+        <a href="index.html"><img class="col-md-4 hidden-xs" src="../assets/img/logo_bp2i0.gif" alt="logo-top"/></a>
         <h1 class="col-md-6">Centre Service Utilisateurs (ITSM 8.0)</h1>
         <div class="col-md-2" id="logout"><a href="#logout"><i class="fa fa-sign-out"></i>Déconnexion</a></div>
       </div/>
@@ -45,12 +40,17 @@
             <span class="icon-bar"></span>
           </button>
         </div>
+
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+            <!-- Accueil -->
             <li><a class="active" href="index.html">Accueil</a></li>
-            <li class="dropdown hidden-xs">
-              <a href="#incidents" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Incidents <span class="caret"></span></a>
-              <ul class="dropdown-menu">
+            <!-- Incidents -->
+            <li class="dropdown">
+              <a href="#incidents">Incidents <span class="caret hidden-xs"></span></a>
+              <ul class="dropdown-menu hidden-xs">
+                <li><a href="#">Vue générale</a></li>
+                <li role="separator" class="divider"></li>
                 <li><a href="#">N1</a></li>
                 <li><a href="#">N2</a></li>
                 <li role="separator" class="divider"></li>
@@ -58,14 +58,34 @@
                 <li><a href="#">Maintenance Matériel</a></li>
               </ul>
             </li>
-            <li><a href="#demandes">Demandes</a></li>
+            <!-- Demandes -->
+            <li class="dropdown">
+              <a href="#metiers">Demandes <span class="caret hidden-xs"></span></a>
+              <ul class="dropdown-menu hidden-xs">
+                <li><a href="#">Vue générale</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Proximité</a></li>
+              </ul>
+            </li>
             <li><a href="#problemes">Problèmes</a></li>
             <li><a href="#changements">Changements</a></li>
-            <li><a href="#knowledge">Knowledge</a></li>
+            <li><a href="#connaissances">Connaissances</a></li>
             <li><a href="#securite">Sécurité</a></li>
-            <li><a href="metiers.html">Métiers</a></li>
+            <!-- Métiers -->
+            <li class="dropdown">
+              <a href="metiers.html">Métiers <span class="caret hidden-xs"></span></a>
+              <ul class="dropdown-menu hidden-xs">
+                <li><a href="metiers.html">Vue générale</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">PF</a></li>
+                <li><a href="#">Cardif</a></li>
+                <li><a href="#">BDDF</a></li>
+                <li><a href="#">Fonction Centrale</a></li>
+              </ul>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
+
       </div>
     </nav>
 
@@ -74,24 +94,24 @@
     <!-- ======================================================== -->
     <div id="main" class="container">
       <h1>Accueil</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p>Bienvenue sur le nouveau FlashBoard. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-3">
           <h2>Block 1</h2>
-          <img class="center-block" src="http://fakeimg.pl/250x100/">
+          <img class="center-block" src="../assets/img/250x100.png">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <h2>Block 2</h2>
-          <img class="center-block" src="http://fakeimg.pl/250x100/">
+          <img class="center-block" src="../assets/img/250x100.png">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <h2>Block 3</h2>
-          <img class="center-block" src="http://fakeimg.pl/250x100/">
+          <img class="center-block" src="../assets/img/250x100.png">
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <h2>Block 4</h2>
-          <img class="center-block" src="http://fakeimg.pl/250x100/">
+          <img class="center-block" src="../assets/img/250x100.png">
         </div>
       </div>
     </div>
@@ -100,6 +120,13 @@
     <!-- ======================================================== -->
     <footer class="container">
       <div id="separator"></div>
-      <img src="img/bloc_marque_bnpparibas_fr.png" alt="logo-top"/>
+      <img src="../assets/img/bloc_marque_bnpparibas_fr.png" alt="logo-top"/>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="../lib/jquery/jquery-1.12.3.min.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+
   </body>
+</html>
