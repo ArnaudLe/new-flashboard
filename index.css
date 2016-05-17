@@ -1,0 +1,130 @@
+/***************** GENERAL *****************/
+/*******************************************/
+body
+{
+	background: rgb(243,243,243);
+	font-family: "BNPP Sans Light", sans-serif;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+h1, li
+{
+	font-family: "BNPP Sans", sans-serif;
+}
+
+p
+{
+	text-align: justify;
+}
+
+
+/***************** SEPARATOR *****************/
+/*********************************************/
+#separator
+{
+	margin: 50px 0 10px 0;
+	height: 3px;
+	background: rgb(0,167,109);
+}
+
+/***************** HEADER *****************/
+/******************************************/
+img[alt="logo-top"]
+{
+	width: 300px;
+	text-align: left;
+}
+
+header h1
+{
+	font-size: 2.2em;
+	text-align: center;
+}
+
+#logout
+{
+	text-align: right;
+	line-height: 70px;
+}
+
+#logout a
+{
+	font-size: 1em;
+	color: black;
+}
+
+header i
+{
+	color: rgb(0,167,109);
+	margin-right: 4px;
+}
+
+/***************** NAVBAR *****************/
+/******************************************/
+nav
+{
+	background: rgb(0,167,109);
+}
+
+nav i
+{
+	color: white;
+	margin-right: 10px;
+}
+
+ul
+{
+	padding-left: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+li
+{
+	display: inline-block;
+	list-style: none;
+	padding: 6px 0px;
+}
+
+a
+{
+	color: white;
+	font-size: 1.4em;
+}
+
+a:focus
+{
+	color: white;
+}
+
+li:hover
+{
+	color: white;
+	background: rgb(150,202,79);
+}
+
+/***************** MAIN *****************/
+/****************************************/
+#main h1
+{
+	font-size: 1.8em;
+}
+
+#main h2
+{
+	font-size: 1.3em;
+	text-align: center;
+}
+
+#main img
+{
+	text-align: center;
+}
+
+/***************** FOOTER *****************/
+/******************************************/
+footer img
+{
+	margin: 10px 0px 0px 0px;
+}
