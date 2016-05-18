@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
-    <title>FlashBoard BP²I</title>
+    <title>Incident - Backlog</title>
 
     <!-- Importation CSS Bootstrap -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 
     <!-- Importation CSS Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Importation CSS Bootstrap-Select -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 
     <!-- Style CSS Perso -->
     <link rel="stylesheet" href="assets/css/design.css">
@@ -33,7 +36,7 @@
       <div class="container">
           <ul class="nav navbar-nav"> <!-- Classes Bootstrap -->
             <!-- Accueil -->
-            <li><a class="active" href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
             <!-- VIP -->
             <li class="dropdown">
               <a href="#vip">VIP <span class="caret"></span></a>
@@ -44,7 +47,7 @@
             </li>
             <!-- Incidents -->
             <li class="dropdown">
-              <a href="#incident">Incident <span class="caret"></span></a>
+              <a class="active" href="#incident">Incident <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Flux</a></li>
                 <li><a href="incident-backlog.html">Backlog</a></li>
@@ -110,9 +113,9 @@
     <nav id="simple-nav" class="visible-xs visible-sm">
       <div class="container">
           <ul>
-            <li><a class="active" href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li><!--
+            <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li><!--
             --><li><a href="#vip">VIP</a></li><!--
-            --><li><a href="#incident">Incident</a></li><!--
+            --><li><a class="active" href="#incident">Incident</a></li><!--
             --><li><a href="#request">Request</a></li><!--
             --><li><a href="#change">Change</a></li><!--
             --><li><a href="#problem">Problem</a></li><!--
@@ -127,15 +130,99 @@
     <!-- ========================= MAIN ========================= -->
     <!-- ======================================================== -->
     <div id="main" class="container">
-      <h1>Accueil</h1>
-      <p>Bienvenue sur le nouveau FlashBoard. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <h1>Incidents - Backlog</h1>
+      <button type="button" class="btn" data-toggle="popover" title="Hypothèses utilisées" data-content="Critères jours ouvrés : 7h/20h du lundi au vendredi hors jours fériés"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i></button>
+      <h3>Dernière mise à jour 18/05/2016 15:17:30</h3>
+
+      <!-- Selection choix multiple : librarie bootstrap-select -->
+      <!-- https://silviomoreto.github.io/bootstrap-select/ -->
+      <div id="filtres">
+        <select class="selectpicker">
+          <option>Date</option>
+          <option>Période de temps</option>
+        </select>
+
+        <select class="selectpicker" multiple>
+          <option>Tous</option>
+          <option>MAC19</option>
+          <option>Compans</option>
+          <option>...</option>
+        </select>
+      </div>
     
-      <div class="row">
+      <div class="row charts">
         <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer"></div>
         <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer2"></div>
-        <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer3"></div>
-        <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer4"></div>
       </div>
+
+      <h3>Tableau de synthèse</h3>
+      <table class="table table-hover table-bordered">
+          <thead>
+              <tr>
+                  <th>Regroupement</th>
+                  <th>Groupe assigné</th>
+                  <th>Moins de 2 jours</th>
+                  <th>Entre 2 et 5 jours</th>
+                  <th>Entre 5 et 10 jours</th>
+                  <th>Entre 10 et 15 jours</th>
+                  <th>Entre 15 et 30 jours</th>
+                  <th>Plus de 30 jours</th>
+                  <th>Total</th>
+                  <th>Âge moyen en jour</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Niveau 1</td>
+                  <td>SD Global</td>
+                  <td>194</td>
+                  <td>60</td>
+                  <td>13</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>268</td>
+                  <td>1,51</td>
+              </tr>
+              <tr>
+                  <td>Niveau 1</td>
+                  <td>SUP BP2I 13Util PF</td>
+                  <td>13</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>17</td>
+                  <td>4,08</td>
+              </tr>
+              <tr>
+                  <td>Niveau 2</td>
+                  <td>SUP BP2I DISTANT N2</td>
+                  <td>73</td>
+                  <td>29</td>
+                  <td>10</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>113</td>
+                  <td>2,25</td>
+              </tr>
+              <tr>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+              </tr>
+          </tbody>
+      </table>
+      <button id="exporter" class="btn btn-lg btn-primary btn-block" type="submit">Exporter</button>
     </div>
 
     <!-- ======================== NAVBAR ======================== -->
@@ -148,6 +235,7 @@
     <!-- JavaScript -->
     <script src="lib/jquery/jquery-1.12.3.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
 
