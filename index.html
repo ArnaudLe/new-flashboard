@@ -7,13 +7,13 @@
     <title>FlashBoard BP²I</title>
 
     <!-- Importation CSS Bootstrap -->
-    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 
     <!-- Importation CSS Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <!-- Style CSS Perso -->
-    <link rel="stylesheet" href="../assets/css/design.css">
+    <link rel="stylesheet" href="assets/css/design.css">
   </head>
 
   <body>
@@ -21,34 +21,23 @@
     <!-- ======================================================== -->
     <header class="container">
       <div class="row">
-        <a href="index.html"><img class="col-md-4 hidden-xs" src="../assets/img/logo_bp2i0.gif" alt="logo-top"/></a>
+        <a href="index.html"><img class="col-md-4 hidden-xs" src="assets/img/logo_bp2i0.gif" alt="logo-top"/></a>
         <h1 class="col-md-6">Centre Service Utilisateurs (ITSM 8.0)</h1>
         <div class="col-md-2" id="logout"><a href="#logout"><i class="fa fa-sign-out"></i>Déconnexion</a></div>
       </div/>
     </header>
 
-    <!-- ======================== NAVBAR ======================== -->
-    <!-- ======================================================== -->
-    <nav class="navbar navbar-default">
+    <!-- ======================== NAVBAR MD+LG ======================== -->
+    <!-- ============================================================== -->
+    <nav id="full-nav" class="visible-md visible-lg">
       <div class="container">
-        <div class="navbar-header">
-          <!-- Bouton remplaçant le nav uniquement sur les petits écrans -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav"> <!-- Classes Bootstrap -->
             <!-- Accueil -->
             <li><a class="active" href="index.html">Accueil</a></li>
             <!-- Incidents -->
             <li class="dropdown">
-              <a href="#incidents">Incidents <span class="caret hidden-xs"></span></a>
-              <ul class="dropdown-menu hidden-xs">
+              <a href="#incidents">Incidents <span class="caret"></span></a>
+              <ul class="dropdown-menu">
                 <li><a href="#">Vue générale</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#">N1</a></li>
@@ -61,8 +50,8 @@
             </li>
             <!-- Demandes -->
             <li class="dropdown">
-              <a href="#demandes">Demandes <span class="caret hidden-xs"></span></a>
-              <ul class="dropdown-menu hidden-xs">
+              <a href="#demandes">Demandes <span class="caret"></span></a>
+              <ul class="dropdown-menu">
                 <li><a href="#">Vue générale</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#">Admin Outils</a></li>
@@ -75,8 +64,8 @@
             <li><a href="#vip">VIP</a></li>
             <!-- Métiers -->
             <li class="dropdown">
-              <a href="metiers.html">Métiers <span class="caret hidden-xs"></span></a>
-              <ul class="dropdown-menu hidden-xs">
+              <a href="metiers.html">Métiers <span class="caret"></span></a>
+              <ul class="dropdown-menu">
                 <li><a href="metiers.html">Vue générale</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#">PF</a></li>
@@ -87,11 +76,25 @@
             </li>
             <li><a href="#toolboard">Toolboard</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
-
       </div>
     </nav>
 
+    <!-- ======================== NAVBAR XS+SM ======================== -->
+    <!-- ============================================================== -->
+    <nav id="simple-nav" class="visible-xs visible-sm">
+      <div class="container"
+>          <ul>
+            <li><a class="active" href="index.html">Accueil</a></li><!--
+            --><li><a href="#incidents">Incidents</a></li><!--
+            --><li><a href="#demandes">Demandes</a></li><!--
+            --><li><a href="#problemes">Problèmes</a></li><!--
+            --><li><a href="#knowledge">Knowledge</a></li><!--
+            --><li><a href="#vip">VIP</a></li><!--
+            --><li><a href="metiers.html">Métiers</a></li><!--
+            --><li><a href="#toolboard">Toolboard</a></li>
+          </ul>
+      </div>
+    </nav>
 
     <!-- ========================= MAIN ========================= -->
     <!-- ======================================================== -->
@@ -111,17 +114,18 @@
     <!-- ======================================================== -->
     <footer class="container">
       <div id="separator"></div>
-      <img src="../assets/img/bloc_marque_bnpparibas_fr.png" alt="logo-top"/>
+      <img src="assets/img/bloc_marque_bnpparibas_fr.png" alt="logo-top"/>
     </footer>
 
     <!-- JavaScript -->
-    <script src="../lib/jquery/jquery-1.12.3.min.js"></script>
-    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
+    <script src="lib/jquery/jquery-1.12.3.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
 
     <!-- JavaScript FusionCharts -->
-    <script type="text/javascript" src="../lib/fusioncharts/js/fusioncharts.js"></script>
-    <script type="text/javascript" src="../lib/fusioncharts/js/themes/fusioncharts.theme.fint.js"></script>
+    <script type="text/javascript" src="lib/fusioncharts/js/fusioncharts.js"></script>
+    <script type="text/javascript" src="lib/fusioncharts/js/themes/fusioncharts.theme.fint.js"></script>
 
   </body>
 </html>
