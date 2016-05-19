@@ -172,6 +172,7 @@ header i
 	display: inline-block;
 }
 
+/* Hypothèses affichées en popover */
 #main .fa-info-circle
 {
 	color: rgb(0,167,109);
@@ -182,6 +183,7 @@ header i
 	vertical-align: 10%;
 }
 
+/* Tableaux détaillés */
 #main table
 {
 	font-size: 0.85em;
@@ -207,8 +209,9 @@ header i
 
 #main button[id="exporter"]
 {
-	padding: 3px;
-	width: 12%;
+	font-size: 1em;
+	padding: 2px;
+	width: 60px;
 }
 
 /**************** CHARTS ****************/
