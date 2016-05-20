@@ -171,7 +171,7 @@ $(document).ready(function()
       }
   });
   revenueChart.render();
-
+    /*
     var revenueChart = new FusionCharts({
         "type": "column2d",
         "renderAt": "chartContainer3",
@@ -340,7 +340,7 @@ $(document).ready(function()
           ]
       }
   });
-  revenueChart.render();
+  revenueChart.render();*/
   })
 });
 

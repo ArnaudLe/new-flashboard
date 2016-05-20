@@ -214,6 +214,21 @@ header i
 	width: 60px;
 }
 
+#main div[id="bloc-transparent"]
+{
+
+	width: 100%;
+	height: 550px;
+	background: rgba(0,0,0,0.1);
+}
+
+#main div > span
+{
+	line-height: 550px;
+	font-size: 3.5em;
+	text-transform: uppercase;
+}
+
 /**************** CHARTS ****************/
 /****************************************/
 #main .charts
