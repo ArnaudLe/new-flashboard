@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 
     <!-- ===== Style CSS Perso ===== -->
-    <link rel="stylesheet" href="assets/css/design.css">
+    <link rel="stylesheet" href="resources/css/design.css">
   </head>
 
   <body>
@@ -25,9 +25,9 @@
     <!-- ======================================================== -->
     <header class="container">
       <div class="row">
-        <a href="index.html"><img class="col-md-4 hidden-xs" src="assets/img/logo_bp2i0.gif" alt="logo-top"/></a>
+        <a href="index.html"><img class="col-md-4 hidden-xs" src="resources/img/logo_bp2i0.gif" alt="logo-top"/></a>
         <h1 class="col-md-6">Centre Service Utilisateurs (ITSM 8.0)</h1>
-        <div class="col-md-2" id="logout"><a href="#logout"><i class="fa fa-sign-out"></i>Déconnexion</a></div>
+        <div class="col-md-2" id="logout"><a href="connexion.html"><i class="fa fa-sign-out"></i>Déconnexion</a></div>
       </div/>
     </header>
 
@@ -42,28 +42,29 @@
             <li class="dropdown">
               <a href="#vip">VIP <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">État-major</a></li>
-                <li><a href="#">Gold</a></li>
+                <li><a href="prochainement.html">État-major</a></li>
+                <li><a href="prochainement.html">Gold</a></li>
               </ul>
             </li>
             <!-- Incidents -->
             <li class="dropdown">
-              <a class="active" href="#incident">Incident <span class="caret"></span></a>
+              <a href="#incident" class="active">Incident <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Flux</a></li>
+                <li><a href="prochainement.html">Flux</a></li>
                 <li><a href="incident-backlog.html">Backlog</a></li>
-                <li><a href="#">...</a></li>
+                <li><a href="prochainement.html">Suivi par technicien</a></li>
+                <li><a href="prochainement.html">Enquête de satisfaction</a></li>
               </ul>
             </li>
             <!-- Demandes -->
             <li class="dropdown">
               <a href="#request">Request <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Flux</a></li>
-                <li><a href="#">Backlog</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">HVD</a></li>
-                <li><a href="#">...</a></li>
+                <li><a href="prochainement.html">Flux</a></li>
+                <li><a href="prochainement.html">Backlog</a></li>
+                <li><a href="prochainement.html">Traitement</a></li>
+                <li><a href="prochainement.html">HVD</a></li>
+                <li><a href="prochainement.html">Enquête de satisfaction & conformité</a></li>
               </ul>
             </li>
             <li><a href="#change">Change</a></li>
@@ -73,36 +74,36 @@
             <li class="dropdown">
               <a href="#meteo">Météo <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="metiers.html">Vue générale</a></li>
+                <li><a href="prochainement.html">Vue générale</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Incident</a></li>
-                <li><a href="#">Request</a></li>
-                <li><a href="#">Change</a></li>
-                <li><a href="#">Problem</a></li>
+                <li><a href="prochainement.html">Incident</a></li>
+                <li><a href="prochainement.html">Request</a></li>
+                <li><a href="prochainement.html">Change</a></li>
+                <li><a href="prochainement.html">Problem</a></li>
               </ul>
             </li>
             <!-- Métiers -->
             <li class="dropdown">
-              <a href="metiers.html">Métiers <span class="caret"></span></a>
+              <a href="#metiers">Métiers <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="metiers.html">Vue générale</a></li>
+                <li><a href="prochainement.html">Vue générale</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">PF</a></li>
-                <li><a href="#">Cardif</a></li>
-                <li><a href="#">BDDF</a></li>
-                <li><a href="#">Fonction Centrale</a></li>
+                <li><a href="prochainement.html">PF</a></li>
+                <li><a href="prochainement.html">Cardif</a></li>
+                <li><a href="prochainement.html">BDDF</a></li>
+                <li><a href="prochainement.html">Fonction Centrale</a></li>
               </ul>
             </li>
             <!-- Supports -->
             <li class="dropdown">
               <a href="#supports">Supports <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">N1</a></li>
-                <li><a href="#">N2</a></li>
-                <li><a href="#">Proximité</a></li>
-                <li><a href="#">Proximité - Solutions 30</a></li>
-                <li><a href="#">Admin Outils</a></li>
-                <li><a href="#">...</a></li>
+                <li><a href="prochainement.html">N1</a></li>
+                <li><a href="prochainement.html">N2</a></li>
+                <li><a href="prochainement.html">Proximité</a></li>
+                <li><a href="prochainement.html">Proximité - Solutions 30</a></li>
+                <li><a href="prochainement.html">Admin Outils</a></li>
+                <li><a href="prochainement.html">...</a></li>
               </ul>
             </li>
           </ul>
@@ -122,7 +123,7 @@
             --><li><a href="#problem">Problem</a></li><!--
             --><li><a href="#knowledge">Knowledge</a></li><!--
             --><li><a href="#meteo">Météo</a></li><!--
-            --><li><a href="metiers.html">Métiers</a></li><!--
+            --><li><a href="#metiers">Métiers</a></li><!--
             --><li><a href="#supports">Supports</a></li>
           </ul>
       </div>
@@ -138,12 +139,12 @@
       <!-- Selection choix multiple : librarie bootstrap-select -->
       <!-- https://silviomoreto.github.io/bootstrap-select/ -->
       <div id="filtres">
-        <select class="selectpicker">
+        <select class="selectpicker show-tick">
           <option>Date</option>
           <option>Période de temps</option>
         </select>
 
-        <select class="selectpicker" multiple>
+        <select class="selectpicker show-tick">
           <option>Tous</option>
           <option>MAC19</option>
           <option>Compans</option>
@@ -230,7 +231,7 @@
     <!-- ======================================================== -->
     <footer class="container">
       <div id="separator"></div>
-      <img src="assets/img/bloc_marque_bnpparibas_fr.png" alt="logo-top"/>
+      <img src="resources/img/bloc_marque_bnpparibas_fr.png" alt="logo-top"/>
     </footer>
 
     <!-- ===== JavaScript ===== -->
@@ -239,8 +240,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- Fallback Bootstrap JS <script src="lib/bootstrap/js/bootstrap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="resources/js/script.js"></script>
+    <script type="text/javascript" src="resources/js/data.js"></script>
 
     <!-- JavaScript FusionCharts -->
     <script type="text/javascript" src="lib/fusioncharts/js/fusioncharts.js"></script>
