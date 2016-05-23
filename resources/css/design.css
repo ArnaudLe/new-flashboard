@@ -198,20 +198,35 @@ header i
 #main .table > thead > tr > th
 {
 	vertical-align: middle;
-	background-color: rgb(180,180,180);
-	color: rgb(70,70,70);
+	background-color: rgb(90,90,90);
+	color: white;
 }
 
 #main .table > tbody > tr > td
 {
-	padding: 2px;
+	vertical-align: middle;
+	padding: 1px;
+}
+
+/* Couleur différente 1 ligne sur 2 */
+#main .table-striped>tbody>tr:nth-child(odd)>td, 
+#main .table-striped>tbody>tr:nth-child(odd)>th
+{
+   background-color: rgb(220,220,220);
+}
+
+/* Couleur différente en hover d'une ligne */
+#main .table-hover tbody tr:hover td,
+#main .table-hover tbody tr:hover th
+{
+  background-color: #f2963f; /*Orange*/
 }
 
 #main button[id="exporter"]
 {
 	font-size: 1em;
 	padding: 2px;
-	width: 60px;
+	width: 180px;
 }
 
 #main div[id="bloc-transparent"]
