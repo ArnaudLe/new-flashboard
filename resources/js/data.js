@@ -2,7 +2,159 @@
 $(document).ready(function()
 {
   FusionCharts.ready(function(){
-    var revenueChart = new FusionCharts({
+        var revenueChart = new FusionCharts({
+        "type": "column2d",
+        "renderAt": "chartContainer",
+        "width": "500",
+        "height": "300",
+        "dataFormat": "json",
+        "dataSource":  {
+          "chart": {
+            "caption": "Incidents - Évolution Backlog",
+            "subCaption": "Mai 2016 à 8h00",
+            "xAxisName": "Jour",
+            "yAxisName": "Backlog",
+            "canvasBgColor" : "#F3F3F3",
+            "canvasBgAlpha" : "100",
+            "bgColor": "#F3F3F3",
+            "bgAlpha" : "100",
+            "theme": "fint",
+            "exportEnabled": "1"
+         },
+         "data": [
+            {
+              "label": "02",
+              "value": "524",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "03",
+              "value": "581",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "04",
+              "value": "524",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "05",
+              "value": "0",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "06",
+              "value": "502",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "09",
+              "value": "459",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "10",
+              "value": "538",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "11",
+              "value": "593",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "12",
+              "value": "544",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "17",
+              "value": "583",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "18",
+              "value": "910",
+              "color" : "#95C94F"
+           },
+           {
+              "label": "19",
+              "value": "580",
+              "color" : "#95C94F"
+           },
+          {
+              "label": "20",
+              "value": "623",
+              "color" : "#95C94F"
+           }
+          ]
+      }
+  });
+  revenueChart.render();
+
+
+        var revenueChart = new FusionCharts({
+        "type": "column2d",
+        "renderAt": "chartContainer2",
+        "width": "500",
+        "height": "300",
+        "dataFormat": "json",
+        "dataSource":  {
+          "chart": {
+            "caption": "Incidents - Backlog actuel",
+            "subCaption": "23/05/2016 à 10h00",
+            "xAxisName": "Nombre de jours",
+            "yAxisName": "Backlog",
+            "canvasBgColor" : "#F3F3F3",
+            "canvasBgAlpha" : "100",
+            "bgColor": "#F3F3F3",
+            "bgAlpha" : "100",
+            "theme": "fint",
+            "exportEnabled": "1"
+         },
+         "data": [
+           {
+              "label": "< 2j",
+              "value": "360",
+              "color" : "#f2963f"
+           },
+           {
+              "label": "2-5j",
+              "value": "103",
+              "color" : "#f2963f"
+           },
+           {
+              "label": "5-10j",
+              "value": "29",
+              "color" : "#f2963f"
+           },
+           {
+              "label": "10-15j",
+              "value": "2",
+              "color" : "#f2963f"
+           },
+           {
+              "label": "15-30j",
+              "value": "0",
+              "color" : "#f2963f"
+           },
+           {
+              "label": "> 30j",
+              "value": "2",
+              "color" : "#f2963f"
+           },
+           {
+              "label": "Total",
+              "value": "496",
+              "color" : "#f2963f"
+           }
+          ]
+      }
+  });
+  revenueChart.render();
+
+
+    /*var revenueChart = new FusionCharts({
         "type": "column2d",
         "renderAt": "chartContainer",
         "width": "500",
@@ -87,7 +239,7 @@ $(document).ready(function()
   });
   revenueChart.render();
 
-    var revenueChart = new FusionCharts({
+  var revenueChart = new FusionCharts({
         "type": "column2d",
         "renderAt": "chartContainer2",
         "width": "500",
@@ -171,7 +323,7 @@ $(document).ready(function()
       }
   });
   revenueChart.render();
-    /*
+
     var revenueChart = new FusionCharts({
         "type": "column2d",
         "renderAt": "chartContainer3",
