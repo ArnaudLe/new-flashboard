@@ -1,13 +1,20 @@
 $(document).ready(function()
 {
-	/* ===== Active Popover sur tout le document ===== */
+	/* ===== POPOVER ===== */
 	$(function()
 	{
-  		$('[data-toggle="popover"]').popover()
-	})
+		/* Active Popover sur tout le document */
+  		$('[data-toggle="popover"]').popover();
+
+  		/* Ferme le popover au prochain clic */
+  		$('.popover-dismiss').popover(
+  		{
+  			trigger: 'focus'
+		});
+	});
 
 
-	/* ===== Gestion du bouton de connexion ===== */
+	/* ===== GESTION BOUTON CONNEXION ===== */
 	var $uid = $('#uid'),
 	$mdp = $('#mdp'),
 	$messageErreur = $("div[class*='alert']"),
