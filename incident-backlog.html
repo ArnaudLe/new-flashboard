@@ -28,7 +28,7 @@
         <a href="index.html"><img class="col-md-4 hidden-xs" src="resources/img/logo_bp2i0.gif" alt="logo-top"/></a>
         <h1 class="col-md-6">Centre Service Utilisateurs (ITSM 8.0)</h1>
         <div class="col-md-2" id="logout"><a href="connexion.html"><i class="fa fa-sign-out"></i>Déconnexion</a></div>
-      </div/>
+      </div>
     </header>
 
     <!-- ======================== NAVBAR MD+LG ======================== -->
@@ -133,21 +133,22 @@
     <!-- ======================================================== -->
     <div id="main" class="container">
       <h1>Incidents - Backlog</h1>
-      <button type="button" class="btn" data-toggle="popover" title="Hypothèses utilisées" data-content="Critères jours ouvrés : 7h/20h du lundi au vendredi hors jours fériés"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i></button>
+      <button type="button" class="btn" data-toggle="popover" data-trigger="focus" title="Hypothèses utilisées" data-content="Critères jours ouvrés : 7h/20h du lundi au vendredi hors jours fériés"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i></button>
       <h3>Dernière mise à jour 18/05/2016 15:17:30</h3>
 
       <!-- Selection choix multiple : librarie bootstrap-select -->
       <!-- https://silviomoreto.github.io/bootstrap-select/ -->
       <div id="filtres">
         <select class="selectpicker show-tick">
-          <option>Date</option>
-          <option>Période de temps</option>
+          <option value="ajd">Aujourd'hui</option>
+          <option value="hier">Hier</option>
+          <option value="periode">Période de temps</option>
         </select>
 
         <select class="selectpicker show-tick">
-          <option>Tous</option>
-          <option>MAC19</option>
-          <option>Compans</option>
+          <option value="tous">Tous</option>
+          <option value="mac19">MAC19</option>
+          <option value="compans">Compans</option>
           <option>...</option>
         </select>
       </div>
@@ -200,7 +201,7 @@
               </tr>
               <tr>
                   <td>Niveau 2</td>
-                  <td>SUP BP2I DISTANT N2</td>
+                  <td>SUP BP2I Distant N2</td>
                   <td>73</td>
                   <td>29</td>
                   <td>10</td>
@@ -236,7 +237,7 @@
               </tr>
               <tr>
                   <td>Admin Outils</td>
-                  <td>SUP BP2 Admin Outils N2</td>
+                  <td>SUP BP2I Admin Outils N2</td>
                   <td>3</td>
                   <td>0</td>
                   <td>0</td>
@@ -275,7 +276,7 @@
       <button id="exporter" class="btn btn-lg btn-primary btn-block" type="submit">Exporter vers tableau Excel</button>
     </div>
 
-    <!-- ======================== NAVBAR ======================== -->
+    <!-- ======================== FOOTER ======================== -->
     <!-- ======================================================== -->
     <footer class="container">
       <div id="separator"></div>
