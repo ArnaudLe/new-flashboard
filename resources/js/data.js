@@ -36,7 +36,7 @@ $(document).ready(function()
           "legendborderalpha": "0",
           "legendshadow": "0",
           "legendnumcolumns": "3",
-          "palettecolors": "#95C94F,#e32118,#4181c3,#82d1f5,#f2963f"
+          "palettecolors": "#00a76d,#95C94F,#5BBA47,#4181c3,#82d1f5"
         },
         "data":
         [
@@ -169,113 +169,11 @@ $(document).ready(function()
     });
     revenueChart.render();
 
-    /* ===== 3 - PIE CHART Incidents - Flux entrant ===== */
+    /* ===== 3 - STACKED COLUMN Incident - Flux entrant ===== */
     var revenueChart = new FusionCharts(
-    {
-      "type": "pie2D",
-      "renderAt": "chartContainer3",
-      "width": "520",
-      "height": "320",
-      "dataFormat": "json",
-      "dataSource":
-      {
-        "chart":
-        {
-          "caption": "Incidents - Flux entrant",
-          "subCaption": "31/05/2016 à 13h30",
-          "canvasBgColor" : "#F3F3F3",
-          "canvasBgAlpha" : "100",
-          "bgColor": "#F3F3F3",
-          "bgAlpha" : "100",
-          "theme": "fint",
-          "rotateValues": "0",
-          "valueFontSize": "12",
-          "valueFontColor": "#000000",
-          "exportEnabled": "1",
-
-          "showvalues": "1",
-          "showlegend": "1",
-          "legendborder": "0",
-          "use3dlighting": "0",
-          "showshadow": "0",
-          "legendbgcolor": "#CCCCCC",
-          "legendbgalpha": "20",
-          "legendborderalpha": "0",
-          "legendshadow": "0",
-          "legendnumcolumns": "3",
-          "palettecolors": "#95C94F,#e32118"
-        },
-        "data":
-        [
-          {
-            "label": "Assignés",
-            "value": "320",
-          },
-          {
-            "label": "Créés",
-            "value": "600",
-          }
-        ]
-      }
-    });
-    revenueChart.render();
-
-    /* ===== 4 - PIE CHART Incidents - Flux sortant ===== */
-    var revenueChart = new FusionCharts(
-    {
-      "type": "pie2D",
-      "renderAt": "chartContainer4",
-      "width": "520",
-      "height": "320",
-      "dataFormat": "json",
-      "dataSource":
-      {
-        "chart":
-        {
-          "caption": "Incidents - Flux sortant",
-          "subCaption": "31/05/2016 à 13h30",
-          "canvasBgColor" : "#F3F3F3",
-          "canvasBgAlpha" : "100",
-          "bgColor": "#F3F3F3",
-          "bgAlpha" : "100",
-          "theme": "fint",
-          "rotateValues": "0",
-          "valueFontSize": "12",
-          "valueFontColor": "#000000",
-          "exportEnabled": "1",
-
-          "showvalues": "1",
-          "showlegend": "1",
-          "legendborder": "0",
-          "use3dlighting": "0",
-          "showshadow": "0",
-          "legendbgcolor": "#CCCCCC",
-          "legendbgalpha": "20",
-          "legendborderalpha": "0",
-          "legendshadow": "0",
-          "legendnumcolumns": "3",
-          "palettecolors": "#95C94F,#e32118"
-        },
-        "data":
-        [
-          {
-            "label": "Assignés",
-            "value": "125",
-          },
-          {
-            "label": "Résolus",
-            "value": "620",
-          }
-        ]
-      }
-    });
-    revenueChart.render();
-
-    /* ===== ? - STACKED COLUMN Incidents - Flux ===== */
-    /*var revenueChart = new FusionCharts(
     {
       "type": "stackedcolumn2d",
-      "renderAt": "chartContainer2",
+      /*"renderAt": "chartContainer",*/
       "width": "520",
       "height": "320",
       "dataFormat": "json",
@@ -283,10 +181,10 @@ $(document).ready(function()
       {
         "chart":
         {
-          "caption": "Incidents - Flux",
-          "subCaption": "23/05/2016 à 15h30",
-          "xAxisName": "Flux",
-          "yAxisName": "Nb incidents",
+          "caption": "Incident - Flux entrant",
+          "subCaption": "Mai 2016 à 8h00",
+          "xAxisName": "Jour",
+          "yAxisName": "Nb incidents entrant",
           "canvasBgColor" : "#F3F3F3",
           "canvasBgAlpha" : "100",
           "bgColor": "#F3F3F3",
@@ -298,7 +196,7 @@ $(document).ready(function()
           "exportEnabled": "1",
 
           "showplotborder": "0",
-          "palettecolors": "#95C94F,#008ee4",
+          "palettecolors": "#4181c3,#82d1f5",
           "canvaspadding": "0",
           "divlinecolor": "CCCCCC",
           "showcanvasborder": "0",
@@ -317,10 +215,34 @@ $(document).ready(function()
             "category":
             [
               {
-                "label": "Flux entrant"
+                "label": "08"
               },
               {
-                "label": "Flux sortant"
+                "label": "09"
+              },
+              {
+                "label": "10"
+              },
+              {
+                "label": "11"
+              },
+              {
+                "label": "12"
+              },
+              {
+                "label": "17"
+              },
+              {
+                "label": "18"
+              },
+              {
+                "label": "19"
+              },
+              {
+                "label": "20"
+              },
+              {
+                "label": "23"
               }
             ]
           }
@@ -328,7 +250,7 @@ $(document).ready(function()
         "dataset":
         [
           {
-            "seriesname": "(Ré)Assignés",
+            "seriesname": "Créés",
             "renderas": "Area",
             "data":
             [
@@ -336,27 +258,431 @@ $(document).ready(function()
                 "value": "50"
               },
               {
-                "value": "320"
+                "value": "32"
+              },
+              {
+                "value": "45"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "52"
+              },
+              {
+                "value": "12"
+              },
+              {
+                "value": "44"
+              },
+              {
+                "value": "36"
+              },
+              {
+                "value": "26"
+              },
+              {
+                "value": "23"
               }
             ]
           },
           {
-            "seriesname": "Créés/Résolus",
+            "seriesname": "Assignés par un groupe",
             "renderas": "Area",
             "data":
             [
               {
-                "value": "500"
+                "value": "20"
               },
               {
-                "value": "400"
+                "value": "12"
+              },
+              {
+                "value": "40"
+              },
+              {
+                "value": "22"
+              },
+              {
+                "value": "32"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "56"
+              },
+              {
+                "value": "34"
+              },
+              {
+                "value": "12"
+              },
+              {
+                "value": "13"
               }
             ]
           }
         ]
       }
     });
-    revenueChart.render();*/
+    revenueChart.render();
+
+
+    /* ===== 4 - STACKED COLUMN Incident - Flux sortant ===== */
+    var revenueChart = new FusionCharts(
+    {
+      "type": "stackedcolumn2d",
+      /*"renderAt": "chartContainer2",*/
+      "width": "520",
+      "height": "320",
+      "dataFormat": "json",
+      "dataSource":
+      {
+        "chart":
+        {
+          "caption": "Incident - Flux sortant",
+          "subCaption": "Mai 2016 à 8h00",
+          "xAxisName": "Jour",
+          "yAxisName": "Nb incidents sortant",
+          "canvasBgColor" : "#F3F3F3",
+          "canvasBgAlpha" : "100",
+          "bgColor": "#F3F3F3",
+          "bgAlpha" : "100",
+          "theme": "fint",
+          "rotateValues": "0",
+          "valueFontSize": "12",
+          "valueFontColor": "#000000",
+          "exportEnabled": "1",
+
+          "showplotborder": "0",
+          "palettecolors": "#00a76d,#95C94F",
+          "canvaspadding": "0",
+          "divlinecolor": "CCCCCC",
+          "showcanvasborder": "0",
+          "legendbgcolor": "#CCCCCC",
+          "legendbgalpha": "20",
+          "legendborderalpha": "0",
+          "legendshadow": "0",
+          "interactivelegend": "1",
+          "showsum": "1",
+          "canvasborderalpha": "0",
+          "showborder": "0"
+        },
+        "categories":
+        [
+          {
+            "category":
+            [
+              {
+                "label": "08"
+              },
+              {
+                "label": "09"
+              },
+              {
+                "label": "10"
+              },
+              {
+                "label": "11"
+              },
+              {
+                "label": "12"
+              },
+              {
+                "label": "17"
+              },
+              {
+                "label": "18"
+              },
+              {
+                "label": "19"
+              },
+              {
+                "label": "20"
+              },
+              {
+                "label": "23"
+              }
+            ]
+          }
+        ],
+        "dataset":
+        [
+          {
+            "seriesname": "Résolus",
+            "renderas": "Area",
+            "data":
+            [
+              {
+                "value": "40"
+              },
+              {
+                "value": "25"
+              },
+              {
+                "value": "35"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "42"
+              },
+              {
+                "value": "8"
+              },
+              {
+                "value": "35"
+              },
+              {
+                "value": "27"
+              },
+              {
+                "value": "01"
+              },
+              {
+                "value": "23"
+              }
+            ]
+          },
+          {
+            "seriesname": "Assignés vers un groupe",
+            "renderas": "Area",
+            "data":
+            [
+              {
+                "value": "5"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "30"
+              },
+              {
+                "value": "20"
+              },
+              {
+                "value": "15"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "54"
+              },
+              {
+                "value": "24"
+              },
+              {
+                "value": "8"
+              },
+              {
+                "value": "10"
+              }
+            ]
+          }
+        ]
+      }
+    });
+    revenueChart.render();
+
+    /* ===== 5 - STACKED COLUMN Request - Backlog ===== */
+    var revenueChart = new FusionCharts(
+    {
+      "type": "stackedcolumn2d",
+      "renderAt": "chartContainer3",
+      "width": "600",
+      "height": "420",
+      "dataFormat": "json",
+      "dataSource":
+      {
+        "chart":
+        {
+          "caption": "Demandes - Backlog",
+          "subCaption": "Mai 2016 à 8h00",
+          "xAxisName": "Jour",
+          "yAxisName": "Nb demandes",
+          "canvasBgColor" : "#F3F3F3",
+          "canvasBgAlpha" : "100",
+          "bgColor": "#F3F3F3",
+          "bgAlpha" : "100",
+          "theme": "fint",
+          "rotateValues": "0",
+          "valueFontSize": "12",
+          "valueFontColor": "#000000",
+          "exportEnabled": "1",
+
+          "showplotborder": "0",
+          "palettecolors": "#95C94F,#97D2B4,#DCDCDC",
+          "canvaspadding": "0",
+          "divlinecolor": "CCCCCC",
+          "showcanvasborder": "0",
+          "legendbgcolor": "#CCCCCC",
+          "legendbgalpha": "20",
+          "legendborderalpha": "0",
+          "legendshadow": "0",
+          "interactivelegend": "1",
+          "showsum": "1",
+          "canvasborderalpha": "0",
+          "showborder": "0"
+        },
+        "categories":
+        [
+          {
+            "category":
+            [
+              {
+                "label": "08"
+              },
+              {
+                "label": "09"
+              },
+              {
+                "label": "10"
+              },
+              {
+                "label": "11"
+              },
+              {
+                "label": "12"
+              },
+              {
+                "label": "17"
+              },
+              {
+                "label": "18"
+              },
+              {
+                "label": "19"
+              },
+              {
+                "label": "20"
+              },
+              {
+                "label": "23"
+              }
+            ]
+          }
+        ],
+        "dataset":
+        [
+          {
+            "seriesname": "GDSA",
+            "renderas": "Area",
+            "data":
+            [
+              {
+                "value": "50"
+              },
+              {
+                "value": "32"
+              },
+              {
+                "value": "45"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "52"
+              },
+              {
+                "value": "12"
+              },
+              {
+                "value": "44"
+              },
+              {
+                "value": "36"
+              },
+              {
+                "value": "26"
+              },
+              {
+                "value": "23"
+              }
+            ]
+          },
+          {
+            "seriesname": "MIC",
+            "renderas": "Area",
+            "data":
+            [
+              {
+                "value": "20"
+              },
+              {
+                "value": "12"
+              },
+              {
+                "value": "40"
+              },
+              {
+                "value": "22"
+              },
+              {
+                "value": "32"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "62"
+              },
+              {
+                "value": "34"
+              },
+              {
+                "value": "12"
+              },
+              {
+                "value": "13"
+              }
+            ]
+          },
+          {
+            "seriesname": "WGD",
+            "renderas": "Area",
+            "data":
+            [
+              {
+                "value": "60"
+              },
+              {
+                "value": "22"
+              },
+              {
+                "value": "54"
+              },
+              {
+                "value": "23"
+              },
+              {
+                "value": "3"
+              },
+              {
+                "value": "12"
+              },
+              {
+                "value": "32"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "15"
+              },
+              {
+                "value": "20"
+              }
+            ]
+          }
+        ]
+      }
+    });
+    revenueChart.render();
 
   }); /* Fin fonction FusionCharts.ready */
 }); /* Fin fonction document.ready */
