@@ -3,7 +3,7 @@
 /* =========================================================================== */
 html
 {
-	min-width: 380px;
+	min-width: 560px;
 }
 
 body
@@ -30,7 +30,7 @@ p
 /* =========================================================================== */
 header img[alt="logo-top"]
 {
-	width: 300px;
+	width: 100%;
 	text-align: left;
 }
 
@@ -38,16 +38,19 @@ header h1
 {
 	font-size: 2.2em;
 	text-align: center;
+	text-transform: uppercase;
 }
 
-header #logout
+header #settings
 {
+	position: relative;
+	top: 12px;
 	text-align: right;
-	line-height: 70px;
 }
 
-header #logout a
+header #settings a
 {
+	display: block;
 	font-size: 1em;
 	color: black;
 }
@@ -106,7 +109,8 @@ header i
 #simple-nav
 {
 	height: 25px;
-	margin-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 12px;
 }
 
 #simple-nav .container
