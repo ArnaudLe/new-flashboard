@@ -25,9 +25,12 @@
     <!-- ======================================================== -->
     <header class="container">
       <div class="row">
-        <a href="index.html"><img class="col-md-4 hidden-xs" src="resources/img/logo_bp2i0.gif" alt="logo-top"/></a>
-        <h1 class="col-md-6">Centre Service Utilisateurs (ITSM 8.0)</h1>
-        <div class="col-md-2" id="logout"><a href="connexion.html"><i class="fa fa-sign-out"></i>Déconnexion</a></div>
+        <a class="hidden-xs col-sm-4 col-md-3" href="index.html"><img src="resources/img/logo_bp2i0.gif" alt="logo-top"/></a>
+        <h1 class="col-xs-6 col-sm-5 col-md-6">FlashBoard 2.0</h1>
+        <div class="col-xs-6 col-sm-3 col-md-3" id="settings">
+          <a href="connexion.html"><i class="fa fa-sign-out"></i>Déconnexion</a>
+          <a href="prochainement.html"><i class="fa fa-cog"></i>Paramètres</a>
+        </div>
       </div>
     </header>
 
@@ -50,6 +53,8 @@
             <li class="dropdown">
               <a href="#incident">Incident <span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <li><a href="prochainement.html">Vue générale</a></li>
+                <li role="separator" class="divider"></li>
                 <li><a href="prochainement.html">Flux entrant</a></li>
                 <li><a href="prochainement.html">Flux sortant</a></li>
                 <li role="separator" class="divider"></li>
@@ -72,13 +77,15 @@
             <li class="dropdown">
               <a href="#request">Request <span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <li><a href="prochainement.html">Vue générale</a></li>
+                <li role="separator" class="divider"></li>
                 <li><a href="prochainement.html">Flux entrant</a></li>
                 <li><a href="prochainement.html">Flux sortant</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="request-backlog.html">Backlog</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="prochainement.html">HVD</a></li>
-                <li><a href="prochainement.html">À déterminer</a></li>
+                <li><a href="prochainement.html">Nouveaux arrivants</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="prochainement.html">Tickets Non Touchés</a></li>
                 <li><a href="prochainement.html">Non-conformité</a></li>
@@ -93,6 +100,8 @@
             <li class="dropdown">
               <a href="#meteo">Météo <span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <li><a href="prochainement.html">Vue générale</a></li>
+                <li role="separator" class="divider"></li>
                 <li><a href="prochainement.html">Incident</a></li>
                 <li><a href="prochainement.html">Request</a></li>
                 <li><a href="prochainement.html">Change</a></li>
@@ -103,8 +112,6 @@
             <li class="dropdown">
               <a href="#metiers">Métiers <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="prochainement.html">Vue générale</a></li>
-                <li role="separator" class="divider"></li>
                 <li><a href="prochainement.html">PF</a></li>
                 <li><a href="prochainement.html">Cardif</a></li>
                 <li><a href="prochainement.html">BDDF</a></li>
