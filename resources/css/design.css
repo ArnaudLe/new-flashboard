@@ -34,6 +34,12 @@ header img[alt="logo-top"]
 	text-align: left;
 }
 
+header img[alt="logo-top-connexion"]
+{
+	width: 300px;
+	text-align: left;
+}
+
 header h1
 {
 	font-size: 2.2em;
