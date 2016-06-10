@@ -191,11 +191,16 @@
           <option value="proximite">Proximité</option>
           <option>...</option>
         </select>
+
+        <select class="selectpicker show-tick">
+          <option value="ouvre">Jours ouvrés</option>
+          <option value="calendaire">Jours calendaires</option>
+        </select>
       </div>
     
       <div class="row charts">
-        <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer"></div>
-        <div class="col-xs-12 col-sm-12 col-md-6" id="chartContainer2"></div>
+        <div class="col-xs-12 col-sm-12 col-md-4" id="chartContainer"></div>
+        <div class="col-xs-12 col-sm-12 col-md-8" id="chartContainer2"></div>
       </div>
 
       <h3>Tableau de synthèse</h3>
@@ -319,33 +324,54 @@
       <table class="table table-hover table-bordered table-striped">
           <thead>
               <tr>
-                  <th>Tags</th>
-                  <th>N1</th>
-                  <th>N2</th>
-                  <th>Total</th>
+                  <th>Regroupement</th>
+                  <th>Groupe assigné</th>
+                  <th>NRP</th>
+                  <th>RDV</th>
+                  <th>TRF</th>
+                  <th>...</th>
+                  <th>Backlog total</th>
+                  <th>Tags total</th>
+                  <th>% de tags</th>
               </tr>
           </thead>
           <tbody>
               <tr>
-                  <td>NRP</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td>Niveau 1</td>
+                  <td>SD Global</td>
+                  <td>3</td>
+                  <td>5</td>
+                  <td>2</td>
+                  <td>...</td>
+                  <td>198</td>
+                  <td>10</td>
+                  <td>5%</td>
               </tr>
               <tr>
-                  <td>Rendez-vous</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td>Niveau 2</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
               </tr>
               <tr>
-                  <td>Référencement</td>
+                  <td>Total</td>
                   <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>1000</td>
+                  <td>200</td>
+                  <td>20%</td>
               </tr>
           </tbody>
       </table>
+      <button id="exporter" class="btn btn-lg btn-primary btn-block" type="submit">Exporter vers tableau Excel</button>
     </div>
 
     <!-- ======================== FOOTER ======================== -->
