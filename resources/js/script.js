@@ -5,14 +5,22 @@ $(document).ready(function()
 	{
 		/* Active Popover sur tout le document */
   		$('[data-toggle="popover"]').popover();
-
-  		/* Ferme le popover au prochain clic */
-  		$('.popover-dismiss').popover(
-  		{
-  			trigger: 'focus'
-		});
 	});
 
+	/* ===== GESTION DES FILTRES ===== */
+	$("select").change(function()
+	{
+		var str = "";
+		$("select option:selected").each(function() 
+		{
+			str += $(this).val() + " ";
+		});
+
+		if(str.indexOf("mac19") > -1) // str contient "mac19"
+		{
+			alert(str);
+		}
+	});
 
 	/* ===== GESTION BOUTON CONNEXION ===== */
 	var $uid = $('#uid'),
@@ -24,7 +32,7 @@ $(document).ready(function()
 	{
 		e.preventDefault();
 
-		var uidRegex = "^[0-9ab][0-9]{5}$" /*123456 ou a23456 ou b23456 */
+		var uidRegex = "^[0-9ab][0-9]{5}$" /* 123456 ou a23456 ou b23456 */
 		if(!$uid.val().match(uidRegex))
 		{
 			$messageErreur.removeClass("hidden");
