@@ -857,7 +857,7 @@ $(document).ready(function()
     {
       "type": "pie2D",
       "renderAt": "chartContainer",
-      "width": "390",
+      "width": "375",
       "height": "320",
       "dataFormat": "json",
       "dataSource":
