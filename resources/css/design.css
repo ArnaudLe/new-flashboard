@@ -192,10 +192,6 @@ header i
 #main .fa-info-circle /* Hypothèses affichées en popover */
 {
 	color: rgb(0,167,109);
-}
-
-#main button[data-toggle="popover"] /* Bouton d'info popover */
-{
 	vertical-align: 10%;
 	padding: 0 0 0 5px;
 }
