@@ -7,11 +7,12 @@ $(document).ready(function()
   		$('[data-toggle="popover"]').popover();
 	});
 
+
 	/* ===== GESTION DES FILTRES ===== */
 	$("select").change(function()
 	{
 		var str = "";
-		$("select option:selected").each(function() 
+		$("select option:selected").each(function()
 		{
 			str += $(this).val() + " ";
 		});
@@ -21,6 +22,23 @@ $(document).ready(function()
 			alert(str);
 		}
 	});
+
+
+	/* ===== HILIGHT CURRENT PAGE ===== */
+	$(function()
+	{
+		var url = location.pathname.split("/")[1]; // pathname : incident-backlog.php
+		var $a = $(' a[href="'+url+'"] '); // sélection du <a> courant : a[href="incident-backlog.php"]
+
+		if(url == "prochainement.php") return; // Aucun hilight de l'onglet pour prochainement.php
+
+		if($a.parent().parent().is(".dropdown-menu")) // Si la page courante est un sous-menu (donc dans dropdown-menu)
+		{
+			$a.parent().parent().prev().addClass("active"); // le <a> parent est "active"
+		}
+		else $a.addClass("active"); // Sinon, la page courante n'est pas dans un sous menu
+	});
+
 
 	/* ===== GESTION BOUTON CONNEXION ===== */
 	var $uid = $('#uid'),
@@ -43,4 +61,5 @@ $(document).ready(function()
 			window.location="index.html";
 		}
 	});
+
 });
