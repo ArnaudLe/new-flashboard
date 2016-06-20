@@ -13,6 +13,30 @@
     <!-- ======================================================== -->
     <?php include("include-header-nav.php"); ?>
 
+    <!-- ===================== CONNEXION BDD ==================== -->
+    <!-- ======================================================== -->
+    <?php
+    try
+    {
+      // On se connecte à MySQL
+      $bdd = new PDO('mysql:host=localhost;dbname=flashboard_data_test;charset=utf8', 'root', '');
+    }
+    catch(Exception $e)
+    {
+      // En cas d'erreur, on affiche un message et on arrête tout
+      die('Erreur : '.$e->getMessage());
+    }?>
+
+    <!-- =============== RECUPERATION DONNEES BDD =============== -->
+    <!-- ======================================================== -->
+
+    <?php
+    $requete = $bdd->prepare('SELECT * FROM incident_20160620');
+    $requete -> execute();
+
+    $donnees = $requete -> fetchAll();
+    ?>
+
     <!-- ========================= MAIN ========================= -->
     <!-- ======================================================== -->
     <div id="main" class="container">
@@ -71,102 +95,25 @@
               </tr>
           </thead>
           <tbody>
+              <?php
+              foreach($donnees as $donnee)
+              {
+              ?>
               <tr>
-                  <td>Niveau 1</td>
-                  <td>SD Global</td>
-                  <td>194</td>
-                  <td>60</td>
-                  <td>13</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>268</td>
-                  <td>1,51</td>
+                  <td><?php echo $donnee['regroupement']; ?></td>
+                  <td><?php echo $donnee['groupe-assigne']; ?></td>
+                  <td><?php echo $donnee['zero-deux']; ?></td>
+                  <td><?php echo $donnee['deux-cinq']; ?></td>
+                  <td><?php echo $donnee['cinq-dix']; ?></td>
+                  <td><?php echo $donnee['dix-quinze']; ?></td>
+                  <td><?php echo $donnee['quinze-trente']; ?></td>
+                  <td><?php echo $donnee['trente-inf']; ?></td>
+                  <td><?php echo $donnee['total-backlog']; ?></td>
+                  <td><?php echo $donnee['age-moyen-backlog']; ?></td>
               </tr>
-              <tr>
-                  <td>Niveau 1</td>
-                  <td>SUP BP2I 13Util PF</td>
-                  <td>13</td>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>17</td>
-                  <td>4,08</td>
-              </tr>
-              <tr>
-                  <td>Niveau 2</td>
-                  <td>SUP BP2I Distant N2</td>
-                  <td>73</td>
-                  <td>29</td>
-                  <td>10</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>113</td>
-                  <td>2,25</td>
-              </tr>
-              <tr>
-                  <td>Proximité</td>
-                  <td>SUP BP2I Campus Compans N2</td>
-                  <td>3</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>4</td>
-                  <td>2,71</td>
-              </tr>
-              <tr>
-                  <td>Maintenance Matériel</td>
-                  <td>Maintenance Matériel</td>
-                  <td>74</td>
-                  <td>13</td>
-                  <td>3</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>91</td>
-                  <td>1,13</td>
-              </tr>
-              <tr>
-                  <td>Admin Outils</td>
-                  <td>SUP BP2I Admin Outils N2</td>
-                  <td>10</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>10</td>
-                  <td>1,13</td>
-              </tr>
-              <tr>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-              </tr>
-              <tr>
-                  <td>Total</td>
-                  <td>Total</td>
-                  <td>367</td>
-                  <td>103</td>
-                  <td>29</td>
-                  <td>2</td>
-                  <td>0</td>
-                  <td>2</td>
-                  <td>503</td>
-                  <td>2,14</td>
-              </tr>
+              <?php
+              }
+              ?>
           </tbody>
       </table>
       <button id="exporter" class="btn btn-lg btn-primary btn-block" type="submit">Exporter vers tableau Excel</button>
