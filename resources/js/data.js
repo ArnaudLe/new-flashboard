@@ -8,7 +8,7 @@ $(document).ready(function()
     /* ======================================================= */
 
     /* ===== 1 - STACKED COLUMN Incident - Flux entrant ===== */
-    var revenueChart = new FusionCharts(
+    var myChart = new FusionCharts(
     {
       "type": "stackedcolumn2d",
       /*"renderAt": "chartContainer",*/
@@ -160,10 +160,10 @@ $(document).ready(function()
         ]
       }
     });
-    revenueChart.render();
+    myChart.render();
 
     /* ===== 2 - Multi-bar/Stacked + Trendline + Line Chart - Incidents - Évolution Flux entrant ===== */
-    var revenueChart = new FusionCharts(
+    var myChart = new FusionCharts(
     {
       "type": "mscombi2d",
       /*"renderAt": "chartContainer",*/
@@ -423,10 +423,10 @@ $(document).ready(function()
         ]
       }
     });
-    revenueChart.render();
+    myChart.render();
 
     /* ===== 2bis - Area Charts - Incidents - Évolution Flux entrant ===== */
-    var revenueChart = new FusionCharts(
+    var myChart = new FusionCharts(
     {
       "type": "mscombi2d",
       /*"renderAt": "chartContainer",*/
@@ -686,14 +686,14 @@ $(document).ready(function()
         ]
       }
     });
-    revenueChart.render();
+    myChart.render();
 
     /* ======================================================= */
     /* ============== INCIDENT - FLUX SORTANT ================ */
     /* ======================================================= */
 
     /* ===== 1 - STACKED COLUMN Incident - Flux sortant ===== */
-    var revenueChart = new FusionCharts(
+    var myChart = new FusionCharts(
     {
       "type": "stackedcolumn2d",
       /*"renderAt": "chartContainer",*/
@@ -845,7 +845,7 @@ $(document).ready(function()
         ]
       }
     });
-    revenueChart.render();
+    myChart.render();
 
 
     /* ======================================================= */
@@ -853,7 +853,7 @@ $(document).ready(function()
     /* ======================================================= */
 
     /* ===== 1 - PIE CHART Incidents - Backlog actuel par groupes ===== */
-    var revenueChart = new FusionCharts(
+    var myChart = new FusionCharts(
     {
       "type": "pie2D",
       "renderAt": "chartContainer",
@@ -913,10 +913,10 @@ $(document).ready(function()
         ]
       }
     });
-    revenueChart.render();
+    myChart.render();
 
     /* ===== 2 - COLUMN Incidents - Évolution Backlog ===== */
-    var revenueChart = new FusionCharts(
+    var myChart = new FusionCharts(
     {
       "type": "column2d",
       /*"renderAt": "chartContainer2",*/
@@ -1021,10 +1021,10 @@ $(document).ready(function()
         ]
       }
     });
-    revenueChart.render();
+    myChart.render();
 
     /* ===== 3 - Multi-bar/Stacked + Trendline + Line Chart - Incidents - Évolution Backlog ===== */
-    var revenueChart = new FusionCharts(
+    var myChart = new FusionCharts(
     {
       "type": "mscombi2d",
       /*"type": "stackedcolumn2dline",*/ //Alternative en stacked-bar
@@ -1340,7 +1340,7 @@ $(document).ready(function()
         ]
       }
     });
-    revenueChart.render();
+    myChart.render();
 
 
     /* ======================================================= */
@@ -1348,7 +1348,7 @@ $(document).ready(function()
     /* ======================================================= */
 
     /* ===== 1 - STACKED COLUMN Request - Backlog ===== */
-    var revenueChart = new FusionCharts(
+    var myChart = new FusionCharts(
     {
       "type": "stackedcolumn2d",
       "renderAt": "chartContainer3",
@@ -1537,7 +1537,7 @@ $(document).ready(function()
         ]
       }
     });
-    revenueChart.render();
+    myChart.render();
 
   }); /* Fin fonction FusionCharts.ready */
 }); /* Fin fonction document.ready */

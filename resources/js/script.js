@@ -24,7 +24,7 @@ $(document).ready(function()
 	});
 
 
-	/* ===== HILIGHT CURRENT PAGE ===== */
+	/* ===== HIGHLIGHT CURRENT PAGE ===== */
 	$(function()
 	{
 		var url = location.pathname.split("/")[1]; // pathname : incident-backlog.php
