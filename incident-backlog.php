@@ -19,22 +19,14 @@
     try
     {
       // On se connecte à MySQL
-      $bdd = new PDO('mysql:host=localhost;dbname=flashboard_data_test;charset=utf8', 'root', '');
+      $bdd = new PDO('mysql:host=localhost;dbname=flashboard_data_test;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+      // dernier argument permet d'afficher + de détails pour les erreurs
     }
     catch(Exception $e)
     {
       // En cas d'erreur, on affiche un message et on arrête tout
       die('Erreur : '.$e->getMessage());
-    }?>
-
-    <!-- =============== RECUPERATION DONNEES BDD =============== -->
-    <!-- ======================================================== -->
-
-    <?php
-    $requete = $bdd->prepare('SELECT * FROM incident_20160620');
-    $requete -> execute();
-
-    $donnees = $requete -> fetchAll();
+    }
     ?>
 
     <!-- ========================= MAIN ========================= -->
@@ -53,17 +45,19 @@
         </select>
 
         <select class="selectpicker show-tick">
-          <option value="tous">Tous les sites géograph.</option>
+          <option value="%">Tous les sites géograph.</option>
           <option value="mac19">MAC19</option>
           <option value="compans">Compans</option>
           <option>...</option>
         </select>
 
         <select class="selectpicker show-tick">
-          <option value="tous">Tous les groupes de support</option>
-          <option value="n1">N1</option>
-          <option value="n2">N2</option>
-          <option value="proximite">Proximité</option>
+          <option value="%">Tous les groupes de support</option>
+          <option value="Niveau 1">N1</option>
+          <option value="Niveau 2">N2</option>
+          <option value="Proximité">Proximité</option>
+          <option value="Maintenance Matériel">Maintenance Matériel</option>
+          <option value="Admin Outils">Admin Outils</option>
           <option>...</option>
         </select>
 
@@ -78,99 +72,115 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" id="chartContainer2"></div>
       </div>
 
-      <h3>Tableau de synthèse</h3>
-      <table class="table table-hover table-bordered table-striped">
-          <thead>
-              <tr>
-                  <th>Regroupement</th>
-                  <th>Groupe assigné</th>
-                  <th>Moins de 2 jours</th>
-                  <th>Entre 2 et 5 jours</th>
-                  <th>Entre 5 et 10 jours</th>
-                  <th>Entre 10 et 15 jours</th>
-                  <th>Entre 15 et 30 jours</th>
-                  <th>Plus de 30 jours</th>
-                  <th>Total</th>
-                  <th>Âge moyen en jour</th>
-              </tr>
-          </thead>
-          <tbody>
-              <?php
-              foreach($donnees as $donnee)
-              {
-              ?>
-              <tr>
-                  <td><?php echo $donnee['regroupement']; ?></td>
-                  <td><?php echo $donnee['groupe-assigne']; ?></td>
-                  <td><?php echo $donnee['zero-deux']; ?></td>
-                  <td><?php echo $donnee['deux-cinq']; ?></td>
-                  <td><?php echo $donnee['cinq-dix']; ?></td>
-                  <td><?php echo $donnee['dix-quinze']; ?></td>
-                  <td><?php echo $donnee['quinze-trente']; ?></td>
-                  <td><?php echo $donnee['trente-inf']; ?></td>
-                  <td><?php echo $donnee['total-backlog']; ?></td>
-                  <td><?php echo $donnee['age-moyen-backlog']; ?></td>
-              </tr>
-              <?php
-              }
-              ?>
-          </tbody>
-      </table>
-      <button id="exporter" class="btn btn-lg btn-primary btn-block" type="submit">Exporter vers tableau Excel</button>
+      <div id="synthese">
+        <h3>Tableau de synthèse</h3>
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Regroupement</th>
+                    <th>Groupe assigné</th>
+                    <th>Moins de 2 jours</th>
+                    <th>Entre 2 et 5 jours</th>
+                    <th>Entre 5 et 10 jours</th>
+                    <th>Entre 10 et 15 jours</th>
+                    <th>Entre 15 et 30 jours</th>
+                    <th>Plus de 30 jours</th>
+                    <th>Total</th>
+                    <th>Âge moyen en jour</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Tableau initial
+                $requete = $bdd->query('SELECT * FROM incident_20160620');
+                while($donnee = $requete->fetch())
+                {
+                  echo "<tr>";
+                  echo "<td>" . $donnee['regroupement'] . "</td>";
+                  echo "<td>" . $donnee['groupe-assigne'] . "</td>";
+                  echo "<td>" . $donnee['zero-deux'] . "</td>";
+                  echo "<td>" . $donnee['deux-cinq'] . "</td>";
+                  echo "<td>" . $donnee['cinq-dix'] . "</td>";
+                  echo "<td>" . $donnee['dix-quinze'] . "</td>";
+                  echo "<td>" . $donnee['quinze-trente'] . "</td>";
+                  echo "<td>" . $donnee['trente-inf'] . "</td>";
+                  echo "<td>" . $donnee['total-backlog'] . "</td>";
+                  echo "<td>" . $donnee['age-moyen-backlog'] . "</td>";
+                  echo "</tr>";
+                }
+                ?>
+            </tbody>
 
-      <h3>Tableau des tags</h3>
-      <table class="table table-hover table-bordered table-striped">
-          <thead>
-              <tr>
-                  <th>Regroupement</th>
-                  <th>Groupe assigné</th>
-                  <th>NRP</th>
-                  <th>RDV</th>
-                  <th>TRF</th>
-                  <th>...</th>
-                  <th>Backlog total</th>
-                  <th>Tags total</th>
-                  <th>% de tags</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>Niveau 1</td>
-                  <td>SD Global</td>
-                  <td>3</td>
-                  <td>5</td>
-                  <td>2</td>
-                  <td>...</td>
-                  <td>198</td>
-                  <td>10</td>
-                  <td>5%</td>
-              </tr>
-              <tr>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-              </tr>
-              <tr>
-                  <td>Total</td>
-                  <td>-</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>1000</td>
-                  <td>200</td>
-                  <td>20%</td>
-              </tr>
-          </tbody>
-      </table>
-      <button id="exporter" class="btn btn-lg btn-primary btn-block" type="submit">Exporter vers tableau Excel</button>
-    </div>
+            <?php
+            // AJAX : Tableau modifié en fonction des filtres
+            if(!empty($_POST['filtre']))
+            {
+              $filtre = $_POST['filtre'];
+
+              $requete = $bdd->prepare('SELECT * FROM incident_20160620 WHERE regroupement LIKE ?');
+              $requete -> execute(array($filtre));
+
+              echo "<tbody id='filtered'>";
+              while($donnee = $requete->fetch())
+              {
+                echo "<tr>";
+                echo "<td>" . $donnee['regroupement'] . "</td>";
+                echo "<td>" . $donnee['groupe-assigne'] . "</td>";
+                echo "<td>" . $donnee['zero-deux'] . "</td>";
+                echo "<td>" . $donnee['deux-cinq'] . "</td>";
+                echo "<td>" . $donnee['cinq-dix'] . "</td>";
+                echo "<td>" . $donnee['dix-quinze'] . "</td>";
+                echo "<td>" . $donnee['quinze-trente'] . "</td>";
+                echo "<td>" . $donnee['trente-inf'] . "</td>";
+                echo "<td>" . $donnee['total-backlog'] . "</td>";
+                echo "<td>" . $donnee['age-moyen-backlog'] . "</td>";
+                echo "</tr>";
+              }
+              echo "</tbody>";
+            }
+            ?>
+            
+        </table>
+        <button id="exporter" class="btn btn-lg btn-primary btn-block" type="submit">Exporter vers tableau Excel</button>
+      </div>
+
+      <div id="tags">
+        <h3>Tableau des tags</h3>
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Regroupement</th>
+                    <th>Groupe assigné</th>
+                    <th>NRP</th>
+                    <th>RDV</th>
+                    <th>TRF</th>
+                    <th>Backlog total</th>
+                    <th>Tags total</th>
+                    <th>% de tags</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $requete = $bdd->query('SELECT * FROM incident_20160620');
+                while($donnee = $requete->fetch())
+                {
+                  echo "<tr>";
+                  echo "<td>" . $donnee['regroupement'] . "</td>";
+                  echo "<td>" . $donnee['groupe-assigne'] . "</td>";
+                  echo "<td>" . $donnee['nrp'] . "</td>";
+                  echo "<td>" . $donnee['rdv'] . "</td>";
+                  echo "<td>" . $donnee['trf'] . "</td>";
+                  echo "<td>" . $donnee['total-backlog'] . "</td>";
+                  echo "<td>" . $donnee['total-tag'] . "</td>";
+                  echo "<td>" . $donnee['pourcentage-tag'] . "</td>";
+                  echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+        <button id="exporter" class="btn btn-lg btn-primary btn-block" type="submit">Exporter vers tableau Excel</button>
+      </div>
+    </div> <!-- fin container -->
 
     <!-- ==================== FOOTER + SCRIPT =================== -->
     <!-- ======================================================== -->
