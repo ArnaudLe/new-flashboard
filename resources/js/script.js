@@ -8,19 +8,43 @@ $(document).ready(function()
 	});
 
 
-	/* ===== GESTION DES FILTRES ===== */
+	// /* ===== GESTION DES FILTRES ===== */
+	// $("select").change(function(e)
+	// {
+	// 	e.preventDefault();
+
+	// 	var filtres = "";
+	// 	$("select option:selected").each(function()
+	// 	{
+	// 		filtres += $(this).val() + "&";
+	// 	});
+
+	// 	if(filtres.indexOf("mac19") > -1) // si filtres contient "mac19"
+	// 	{
+	// 		alert(date + "-" + site_geo + "-" + groupe_support + "-" + type_cal);
+	// 	}
+	// });
+
+	/* ===== GESTION DU FILTRE GROUPES DE SUPPORT ===== */
 	$("select").change(function()
 	{
-		var str = "";
-		$("select option:selected").each(function()
-		{
-			str += $(this).val() + " ";
-		});
+		var filtre = $(this).val(); // valeur filtre sélectionné
 
-		if(str.indexOf("mac19") > -1) // str contient "mac19"
+		// Tableau des tags : caché si filtre appliqué, présent sinon
+		if(filtre != "%") $("#tags").hide();
+		else $("#tags").show();
+
+		$.ajax(
 		{
-			alert(str);
-		}
+	        url: 'incident-backlog.php',
+	        type: 'POST',
+	        data: {"filtre" : filtre},
+	        success: function(response)
+	        {
+	        	$("#synthese tbody").remove(); // on retire les valeurs initiales
+	        	$(response).find("#filtered").insertAfter("#synthese thead"); // remplace par les nouvelles valeurs
+	        }
+    	});
 	});
 
 
@@ -58,7 +82,7 @@ $(document).ready(function()
 		else
 		{
 			$messageErreur.addClass("hidden");
-			window.location="index.html";
+			window.location="index.php";
 		}
 	});
 
